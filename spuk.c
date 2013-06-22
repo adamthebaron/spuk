@@ -13,8 +13,8 @@
 //Remember that indexing a pointer is easy as type casting adn addign/subtracting your wat to the speicif element. C know the size of the typedef.
 
 typedef struct TARBALL {
-	char *URL;
-	char *const filename;
+	char const *URL;
+	char const *filename;
 	char *const location;
 	float size;
 	size_t MD5SUM;
