@@ -4,25 +4,21 @@
 #include <ctype.h>
 #include <unistd.h>
 
-#define TMP /tmp
-
-//Created by Adam Kessler. I don't care what you do with this. I give it the GNU GPL, so boom, there ya go..
+//Created by Adam Kessler. I don't care what you do with this. I give it the GNU GPL, so boom, there ya go...
 //"Mirror Mirror on the wall, shovel chestnuts in my path"
 
-struct TARBALL {
+typedef struct TARBALL {
 	char *URL;
 	char *filename;
 	FILE *file_descriptor;
-};
-
-typedef struct TARBALL tarball; //redundant, I know.
+}tarball; //redundant, I know.
 
 void curl_easy_instance(CURL *curl, CURLcode *res, tarball *package) {
 curl = curl_easy_init();
 	if (curl) {
-		//package->file_descriptor = fopen()
+		package->file_descriptor = fopen()
 		curl_easy_setopt(curl, CURLOPT_URL, (package->URL));
-		//curl_easy_setopt
+		curl_easy_setopt
 	} //Check to make sure
 }
 
