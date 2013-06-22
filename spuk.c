@@ -5,6 +5,7 @@
 #include <unistd.h>
 #include "spuk.h"
 
+
 #define TMP /tmp
 
 //Created by Adam Kessler. I don't care what you do with this. I give it the GNU GPL, so boom, there ya go...
@@ -13,18 +14,19 @@
 
 typedef struct TARBALL {
 	char *URL;
-	char *filename;
+	char *const filename;
 	FILE *location;
 	float size;
-	
+	size_t MD5SUM;
+	size_t SHA512SUM;
 }tarball; //redundant, I know.
 
 void curl_easy_instance(CURL *curl, CURLcode *res, tarball *package) {
 curl = curl_easy_init();
 	if (curl) {
-		package->file_descriptor = fopen()
+		package->location = fopen()
 		curl_easy_setopt(curl, CURLOPT_URL, (package->URL));
-		curl_easy_setopt
+		curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_data)
 	} 
 }
 
