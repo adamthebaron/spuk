@@ -12,14 +12,14 @@
 //"Mirror Mirror on the wall, shovel chestnuts in my path"
 //Remember that indexing a pointer is easy as type casting adn addign/subtracting your wat to the speicif element. C know the size of the typedef.
 
-typedef struct shrek /* Long story and an inside joke */ {
+typedef struct SHREK /* Long story and an inside joke */ {
 	char const *URL;
 	char const *filename;
 	char *const location;
 	float size;
 	char const MD5SUM;
 	char const SHA512SUM;
-}tarball; //redundant, I know.
+}shrek; //redundant, I know.
 
 void curl_easy_instance(CURL *curl, CURLcode *res, tarball *package) {
 curl = curl_easy_init();
