@@ -15,7 +15,7 @@
 typedef struct TARBALL {
 	char *URL;
 	char *const filename;
-	FILE *location;
+	char *const location;
 	float size;
 	size_t MD5SUM;
 	size_t SHA512SUM;
