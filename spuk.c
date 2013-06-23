@@ -10,7 +10,7 @@
 
 //Created by Adam Kessler. I don't care what you do with this. I give it the GNU GPL, so boom, there ya go...
 //"Mirror Mirror on the wall, shovel chestnuts in my path"
-//Remember that indexing a pointer is easy as type casting adn addign/subtracting your wat to the speicif element. C know the size of the typedef.
+//Remember that indexing a pointer is easy as type casting and addign/subtracting your wat to the speicif element. C know the size of the typedef.
 
 typedef struct SHREK /* Long story and an inside joke */ {
 	char const *URL;
@@ -21,11 +21,11 @@ typedef struct SHREK /* Long story and an inside joke */ {
 	char const SHA512SUM;
 }shrek; //redundant, I know.
 
-void curl_easy_instance(CURL *curl, CURLcode *res, tarball *package) {
+void curl_easy_instance(CURL *curl, CURLcode *res, shrek *package) {
 curl = curl_easy_init();
 	if (curl) {
 		curl_easy_setopt(curl, CURLOPT_URL, (package->URL));
-		curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_data)
+		curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_data);
 	} 
 }
 
@@ -35,16 +35,19 @@ printf("Version: Dude, I don't know, I'm too young.\n");
 }
 
 void functionality(void) {
-printf("SYNOPSIS: spuk [FIRST_OPTIONS] [SECOND_OPTIONS] [URL]\n");
-printf(" First options:\n \
+printf("SYNOPSIS: spuk [OPTION] [URL]\n");
+printf(" Options:\n \
 -b OR --build: Download and build, do not install.\n \
 -c OR --configure: Download then edit configure script. Does not build or install.\n \
 -d OR --download: Just download the tarball, does not build or install.\n \
 -e OR --extract: Download and extract the tarball in the location specified by TMP_DIR in /etc/spuk/spuk.conf.\n \
+-f OR --force-install: Install the package regardless of whether or not it is installed. \n \
 -h OR --help: Display this. \n \
 -i OR --install: Download, build, and install the tarball.\n \
 -m OR --makefile: Download then edit the makefile. Does not build or install.\n \
--r OR --remove: Remove the package. Do not enter the URL, enter the package name. Grep /etc/spuk/installed.txt to find package.\n ");
+-r OR --remove: Remove the package. Do not enter the URL, enter the package name. Grep /etc/spuk/installed.txt to find package.\n \
+--skip-md5: Do not check to see if MD5SUMS match. \n \
+--skip-sha: Do not check to see if SHA512SUMS match.\n");
 }
 
 int main(int argc, char *argv[]) {
