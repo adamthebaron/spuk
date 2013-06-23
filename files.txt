@@ -1,0 +1,13 @@
+##### THIS FILE WILL BE REMOVED SHORTLY #####
+
+spuk's files:
+/etc
+	/etc/spuk
+		/etc/spuk.conf = Configuration file used for local changes to spuk itself
+		/etc/spuk.deny = List of websites or specific locations that spuk is not allowed to connect to
+
+/var
+	/var/log
+		/var/log/installed = List of installed packages by name (Very similar to Slackware's /var/log/packages)
+		/var/log/removed = Removed packages from the current time to a past set time which can be changed in spuk.conf
+		/var/log/webaddr = List of URLs that the user connected to to download files using spuk

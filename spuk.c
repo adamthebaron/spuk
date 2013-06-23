@@ -45,7 +45,7 @@ printf(" Options:\n \
 -h OR --help: Display this. \n \
 -i OR --install: Download, build, and install the tarball.\n \
 -m OR --makefile: Download then edit the makefile. Does not build or install.\n \
--r OR --remove: Remove the package. Do not enter the URL, enter the package name. Grep /etc/spuk/installed.txt to find package.\n \
+-r OR --remove: Remove the package. Do not enter the URL, enter the package name. Grep /var/log/installed to find package.\n \
 --skip-md5: Do not check to see if MD5SUMS match. \n \
 --skip-sha: Do not check to see if SHA512SUMS match.\n");
 }
