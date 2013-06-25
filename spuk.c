@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
-#include <unistd.h>
+#include <unistd.h> //Oh getopt() you magnificent beast.
 #include "spuk.h"
 
 
@@ -12,15 +12,23 @@
 //"Mirror Mirror on the wall, shovel chestnuts in my path"
 //Remember that indexing a pointer is easy as type casting and addign/subtracting your wat to the speicif element. C know the size of the typedef.
 
-typedef struct SHREK /* Long story and an inside joke */ {
-	char const *URL;
-	char const *filename;
-	char *const location;
+
+/* This, ladies and gentlemen, is an instance of a tarball that spuk uses. Very basic, no? */
+typedef struct SHREK { /* Long story and an inside joke */
+	char const * const URL; // URL is a constant pointer pointing to a constant character. BOOM got it down.
+	char const * const filename;
+	char const * const location;
 	float size;
-	char const MD5SUM;
-	char const SHA512SUM;
+	char const * const MD5SUM;
+	char const * const SHA512SUM;
 }shrek; //redundant, I know.
 
+typedef struct opt_argopts { // "Kessler, you're killing me." "This is open source, either I'll change it or some 12 year old will"
+
+
+}
+
+static const char *optstring = ""
 void curl_easy_instance(CURL *curl, CURLcode *res, shrek *package) {
 curl = curl_easy_init();
 	if (curl) {
@@ -51,8 +59,13 @@ printf(" Options:\n \
 }
 
 int main(int argc, char *argv[]) {
-	if (argc == 1)
-		printf("No URL defined. Type spuk -h OR spuk --help for more info\n");
+printf("spuk")
+int call_opt = 0;
+call_opt = getopt(argc, argv, optstring)
+while (call_opt != -1) {
+//Now what?!
+}
+
 
 return 0;
 }

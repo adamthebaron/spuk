@@ -11,3 +11,6 @@ spuk's files:
 		/var/log/installed = List of installed packages by name (Very similar to Slackware's /var/log/packages)
 		/var/log/removed = Removed packages from the current time to a past set time which can be changed in spuk.conf
 		/var/log/webaddr = List of URLs that the user connected to to download files using spuk
+	/var/spuk
+		/var/spuk/files
+				/var/spuk/files/[PACKAGE NAME] = List of every single damn file that was installed as a result of installing [PACKAGE NAME]
