@@ -10,11 +10,12 @@ Used with the <a href="http://gryphix.org/">Gryphix</a> operating system.
 Usage
 </h1>
 
-<b>SYNOPSIS: spuk [FIRST_OPTIONS] [SECOND_OPTIONS] [URL]</b>
+<b>SYNOPSIS: spuk [OPTIONS] [URL]</b>
 
+<p>
 <code>
-$ spuk --help
-First options:
+$ spuk --help <br>
+</code>
 -b OR --build: Download and build, do not install. <br>
 -c OR --configure: Download then edit configure script. Does not build or install. <br>
 -d OR --download: Just download the tarball, does not build or install. <br>
@@ -23,4 +24,6 @@ First options:
 -i OR --install: Download, build, and install the tarball. <br>
 -m OR --makefile: Download then edit the makefile. Does not build or install. <br>
 -r OR --remove: Remove the package. Do not enter the URL, enter the package name. Grep /etc/spuk/installed.txt to find package. <br>
-</code>
+--skip-md5: Do not check to see if MD5SUMS match. <br>
+--skip-sha: Do not check to see if SHA512SUMS match. <br>
+</p>
