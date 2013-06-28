@@ -24,17 +24,8 @@ typedef struct {
 }shrek; //Inside joke.
 
 static const struct option[] = {
-{"build", no_argument}
-{"configure", no_argument}
-{"download", no_argument}
-{"extract", no_argument}
-{"force-install", no_argument}
-{"help", no_argument}
-{"install", required_argument}
-{"makefile", no_argument}
-{"remove", no_argument}
-{"skip-md5", no_argument}
-{"skip-sha", no_argument}
+{"build", no_required}
+
 {0,0,0,0} //Terminate the getopt_long array.
 }
 
