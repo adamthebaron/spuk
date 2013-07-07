@@ -10,10 +10,8 @@
 
 #define TMP /tmp
 
-//Created by Adam Kessler. I don't care what you do with this. I give it the GNU GPL, so boom, there ya go...
 //"Mirror Mirror on the wall, shovel chestnuts in my path"
 
-/* This, ladies and gentlemen, is an instance of a tarball that spuk uses. Very basic, no? */
 typedef struct {
 	char const * const URL; // URL is a constant pointer pointing to a constant character. BOOM got it down.
 	char const * const filename;
@@ -59,16 +57,16 @@ printf("SYNOPSIS: spuk [OPTION] [URL]\n");
 printf(" Options:\n \
 -a OR --append: 	   Append string to configure script.\n \
 -b OR --build: 		   Download and build, do not install.\n \
--c OR --configure:     Download then edit configure script. Does not build or install.\n \
--d OR --download:      Just download the tarball, does not build or install.\n \
+-c OR --configure:     	   Download then edit configure script. Does not build or install.\n \
+-d OR --download:          Just download the tarball, does not build or install.\n \
 -e OR --extract: 	   Download and extract the tarball in the location specified by TMP_DIR in /etc/spuk/spuk.conf.\n \
--f OR --force-install: Install the package regardless of whether or not it is installed. \n \
--h OR --help:          Display this. \n \
--i OR --install:       Download, build, and install the tarball.\n \
+-f OR --force-install: 	   Install the package regardless of whether or not it is installed. \n \
+-h OR --help:              Display this. \n \
+-i OR --install:           Download, build, and install the tarball.\n \
 -m OR --makefile: 	   Download then edit the makefile. Does not build or install.\n \
--r OR --remove: 	   Remove the package. Do not enter the URL, enter the package name. Grep /var/log/installed to find package.\n \
+-r OR --remove: 	   Remove the package. Do not enter the URL, enter the package name. grep /var/log/installed to find package.\n \
 --skip-md5: 		   Do not check to see if MD5SUMS match. \n \
---skip-sha: 	       Do not check to see if SHA512SUMS match.\n");
+--skip-sha: 	           Do not check to see if SHA512SUMS match.\n");
 }
 
 int main(int argc, char *argv[]) {
