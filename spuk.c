@@ -12,14 +12,14 @@
 
 //"Mirror Mirror on the wall, shovel chestnuts in my path"
 
-typedef struct {
-	char const * const URL; // URL is a constant pointer pointing to a constant character. BOOM got it down.
+typedef struct package{
+	char const * const URL; 
 	char const * const filename;
 	char const * const location;
 	float size;
 	char const * const MD5SUM;
 	char const * const SHA512SUM;
-}shrek; //Inside joke.
+}shrek; 
 
 static const struct option options[] = {
 {"append", no_argument, 0, 'a'}
@@ -70,7 +70,7 @@ printf(" Options:\n \
 }
 
 int main(int argc, char *argv[]) {
-printf("spuk") //Dunno.
+printf("spuk"); //Dunno.
 int call_opt = 0;
 call_opt = getopt_long(argc, argv, optstring, options, )
 
