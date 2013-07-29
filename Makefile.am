@@ -1,2 +1,2 @@
 spuk:
-	clang -lcurl main.c -o spuk
+	clang main.c -o spuk

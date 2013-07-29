@@ -18,7 +18,7 @@ typedef struct package{
 	float size;
 	char const * const MD5SUM;
 	char const * const SHA512SUM;
-}shrek; 
+}shrek; //K Justin.
 
 static const struct option options[] = {
 	{"append", no_argument, 0, 'a'}
@@ -36,8 +36,7 @@ static const struct option options[] = {
 	{0,0,0,0} //sentinel
 }
 
-static const char *optstring = "a:b:c:d:e:f:i:m:r:hSM"; /*Optstring is a pointer to a character that is constant and static
-							  Ah, geez, I hope I am doing this right.*/
+static const char *optstring = "a:b:c:d:e:f:i:m:r:hSM";
 
 
 void version(void) {
