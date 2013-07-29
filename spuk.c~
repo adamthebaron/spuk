@@ -12,14 +12,14 @@
 
 //"Mirror Mirror on the wall, shovel chestnuts in my path"
 
-typedef struct {
-	char const * const URL; // URL is a constant pointer pointing to a constant character. BOOM got it down.
+typedef struct package{
+	char const * const URL; 
 	char const * const filename;
 	char const * const location;
 	float size;
 	char const * const MD5SUM;
 	char const * const SHA512SUM;
-}shrek; //Inside joke.
+}shrek; 
 
 static const struct option options[] = {
 {"append", no_argument, 0, 'a'}
@@ -37,7 +37,9 @@ static const struct option options[] = {
 {0,0,0,0} //sentinel
 }
 
-static const char *optstring = "a:b:c:d:e:f:i:m:r:hSM"; //Optstring is a pointer to a character that is constant and static
+static const char *optstring = "a:b:c:d:e:f:i:m:r:hSM"; /*Optstring is a pointer to a character that is constant and static
+							  Ah, geez, I hope I am doing this right.*/
+
 
 void curl_easy_instance(CURL *curl, CURLcode *res, shrek *package) {
 curl = curl_easy_init();
@@ -70,7 +72,7 @@ printf(" Options:\n \
 }
 
 int main(int argc, char *argv[]) {
-printf("spuk") //Dunno.
+printf("spuk"); //Dunno.
 int call_opt = 0;
 call_opt = getopt_long(argc, argv, optstring, options, )
 
