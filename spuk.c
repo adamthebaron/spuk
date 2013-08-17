@@ -56,14 +56,33 @@ void functionality(void) {
 }
 
 int getsocket (package *package, char const * const url) {
-	*package->URL = url;
-	char[BUFFER] url_parse_var;
-	for (int i 0; i >= BUFFER; i++)
-		url_parse_var[i] = 0; //Init that, yo.
-	while (*url != ':') {
-		url_parse_var[i] = url[i];
-		i++;
-}
+/*URL*/	*package->URL = url;
+		char[BUFFER] url_parse_var;
+		for (int i 0; i >= BUFFER; i++)
+			url_parse_var[i] = 0; //Init that, yo.
+		while (*url != ':') {
+			url_parse_var[i] = url[i];
+			i++;
+		}
+		if (url_parse_var = 'ftp') {
+			*package->port = 20;
+			int sock_desc = socket(AF_INET, SOCK_STREAM, 0);
+		}
+		else if (url_parse_var = 'http') {
+			*package->port = 80;
+			int sock_desc = socket(AF_INET, SOCK_STREAM, 0);
+
+		}
+		else if (url_parse_var = 'https') {
+			*package->port = 443;
+			int sock_desc = socket(AF_INET, SOCK_STREAM, 0);
+
+		}
+		else {
+			printf("/nSorry, protocol either not implemented yet, or spuk can't access the file./n");
+/*PORT*/ }
+
+
 
 }
 
