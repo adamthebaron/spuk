@@ -10,6 +10,7 @@
 
 //Program preprocessor directives
 #include "spuk.h"
+#define BUFFER 256 //To make it seem important.
 
 //"Mirror Mirror on the wall, shovel chestnuts in my path"
 
@@ -26,7 +27,7 @@ static const struct option options[] = {
 	{"remove", required_argument, 0, 'r'}
 	{"skip-md5", no_argument, 0, 'M'}
 	{"skip-sha", no_argument, 0, 'S'}
-	{0,0,0,0} //sentinel
+	{0,			 0,			  0,  0} //sentinel
 }
 
 static const char *optstring = "a:b:c:d:e:f:i:m:r:hSM";
@@ -54,10 +55,52 @@ void functionality(void) {
 	-S OR --skip-sha:          Do not check to see if SHA512SUMS match.\n");
 }
 
+int getsocket (package *package, char const * const url) {
+	*package->URL = url;
+	char[BUFFER] url_parse_var;
+	for (int i 0; i >= BUFFER; i++)
+		url_parse_var[i] = 0; //Init that, yo.
+	while (*url != ':') {
+		url_parse_var[i] = url[i];
+		i++;
+}
+
+}
+
 int main(int argc, char *argv[]) {
 	printf("spuk\n"); //Dunno.
-	int call_opt = 0;
-	call_opt = getopt_long(argc, argv, optstring, options, )
+	int call_opt = NULL;
+	while (call_opt = getopt_long(argc, argv, optstring, options,) != -1 ) {
+		switch (call_opt) {
+			case 'a' :
+			
+			case 'b' :
+			
+			case 'c' :
+			
+			case 'd' :
+			
+			case 'e' :
+			
+			case 'f' :
+			
+			case 'h' :
+			
+			case 'i' :
+				package package;
+				while (getsocket(package, optopt) != 0)
+			break;
+			
+			case 'm' :
+			
+			case 'r' :
+			
+			case 'M' :
+			
+			case 'S' :
+		}
+
+	}
 
 	return 0;
 }

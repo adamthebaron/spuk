@@ -19,7 +19,7 @@
 size_t write_data(char *ptr, size_t size, size_t nmemb, void *userdata);
 
 /* Get socket for specific location, protocl, and port */
-int getsocket(int sockfd, package);
+int getsocket(package package, char const * const url);
 
 /* Package structure */
 typedef struct package{
