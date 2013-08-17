@@ -13,20 +13,6 @@
 
 //"Mirror Mirror on the wall, shovel chestnuts in my path"
 
-typedef struct package{
-	/* URL to EXACT location where tarball is. Accept protocols in README */
-	char const * const URL;
-	/* Y-you know what... I don't know why I declared this. */
-	char const * const filename;
-	/* Location of tarball on server */
-	char const * const location;
-	/* Size of tarball in bytes */
-	float size;
-	/* Checksums to be safe */
-	char const * const MD5SUM;
-	char const * const SHA512SUM;
-}shrek; //K Justin.
-
 static const struct option options[] = {
 	{"append", no_argument, 0, 'a'}
 	{"build", no_argument, 0, 'b'}
