@@ -1,21 +1,28 @@
+//OS preprocessor directives
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <string.h>
 #include <ctype.h>
-#include <unistd.h> 
 #include <getopt.h>
 
+//Program preprocessor directives
 #include "spuk.h"
-
-
-#define TMP /tmp
 
 //"Mirror Mirror on the wall, shovel chestnuts in my path"
 
 typedef struct package{
-	char const * const URL; 
+	/* URL to EXACT location where tarball is. Accept protocols in README */
+	char const * const URL;
+	/* Y-you know what... I don't know why I declared this. */
 	char const * const filename;
+	/* Location of tarball on server */
 	char const * const location;
+	/* Size of tarball in bytes */
 	float size;
+	/* Checksums to be safe */
 	char const * const MD5SUM;
 	char const * const SHA512SUM;
 }shrek; //K Justin.
