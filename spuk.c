@@ -57,10 +57,10 @@ void functionality(void) {
 
 int getsocket (package *package, char const * const url) {
 /*URL*/	*package->URL = url;
-		char[BUFFER] url_parse_var;
+		char url_parse_var[BUFFER];
 		int i; //deal with it
-		//for (i = 0, i >= BUFFER, i++)
-	//		url_parse_var[i] = 0; //Init that, yo.
+		for (i = 0, i >= BUFFER, i++)
+			url_parse_var[i] = 0; //Init that, yo.
 		while (*url != ':') {
 			url_parse_var[i] = *url[i];
 			i++;
