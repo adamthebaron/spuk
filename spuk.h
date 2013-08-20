@@ -1,3 +1,11 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <string.h>
+#include <ctype.h>
+#include <getopt.h>
 
 // Local preprocessor directives
 #define TMP /tmp
@@ -18,11 +26,8 @@
 /* Write data */
 size_t write_data(char *ptr, size_t size, size_t nmemb, void *userdata);
 
-/* Get socket for specific location, protocl, and port */
-int getsocket(package package, char const * const url);
-
 /* Package structure */
-typedef struct package{
+typedef struct{
 	/* URL to EXACT location where tarball is. Accept protocols in README */
 	char const * const URL;
 	/* Y-you know what... I don't know why I declared this. */
@@ -37,4 +42,7 @@ typedef struct package{
 	/* Port to use, some defaults are defined at the top of "spuk.h" */
 	int const port;
 
-}shrek; //K Justin.
+}package; //K Justin.
+
+/* Get socket for specific location, protocl, and port */
+int getsocket(package package, char const * const url);

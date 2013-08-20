@@ -58,22 +58,23 @@ void functionality(void) {
 int getsocket (package *package, char const * const url) {
 /*URL*/	*package->URL = url;
 		char[BUFFER] url_parse_var;
-		for (int i 0; i >= BUFFER; i++)
-			url_parse_var[i] = 0; //Init that, yo.
+		int i; //deal with it
+		//for (i = 0, i >= BUFFER, i++)
+	//		url_parse_var[i] = 0; //Init that, yo.
 		while (*url != ':') {
-			url_parse_var[i] = url[i];
+			url_parse_var[i] = *url[i];
 			i++;
 		}
-		if (url_parse_var = 'ftp') {
+		if (url_parse_var = "ftp") {
 			*package->port = 20;
 			int sock_desc = socket(AF_INET, SOCK_STREAM, 0);
 		}
-		else if (url_parse_var = 'http') {
+		else if (url_parse_var = "http") {
 			*package->port = 80;
 			int sock_desc = socket(AF_INET, SOCK_STREAM, 0);
 
 		}
-		else if (url_parse_var = 'https') {
+		else if (url_parse_var = "https") {
 			*package->port = 443;
 			int sock_desc = socket(AF_INET, SOCK_STREAM, 0);
 
@@ -89,7 +90,7 @@ int getsocket (package *package, char const * const url) {
 int main(int argc, char *argv[]) {
 	printf("spuk\n"); //Dunno.
 	int call_opt = NULL;
-	while (call_opt = getopt_long(argc, argv, optstring, options,) != -1 ) {
+	while (call_opt = getopt_long(argc, argv, optstring, options, 0) != -1 ) { //remove 0 at end of getoptcall
 		switch (call_opt) {
 			case 'a' :
 			
@@ -106,8 +107,8 @@ int main(int argc, char *argv[]) {
 			case 'h' :
 			
 			case 'i' :
-				package package;
-				while (getsocket(package, optopt) != 0)
+				package pack;
+				while (getsocket(pack, optopt) != 0); // remove semicolon
 			break;
 			
 			case 'm' :
@@ -116,7 +117,7 @@ int main(int argc, char *argv[]) {
 			
 			case 'M' :
 			
-			case 'S' :
+			case 'S' : break;
 		}
 
 	}
