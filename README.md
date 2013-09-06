@@ -10,9 +10,6 @@ Used with the <a href="http://gryphix.org/">Gryphix</a> operating system.
 Usage
 </h1>
 
-<b>SYNOPSIS: spuk [URL] [OPTIONS]</b>
-Side note, the reason why URL is first is because of a function I defined in libspuk called get_package.
-Well, that, and I am a 16 year old who thinks hes got a shot at this kind of stuff.
 <p>
 <code>
 $ spuk --help <br>
