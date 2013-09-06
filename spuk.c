@@ -7,10 +7,8 @@
 #include <string.h>
 #include <ctype.h>
 #include <getopt.h>
-
-//Program preprocessor directives
-#include "spuk.h"
-#define BUFFER 256 //To make it seem important.
+#include <spuk/spukdefs.h>  // Not yet
+#include <spuk/spukfuncs.h> // implemented, will fail.
 
 //"Mirror Mirror on the wall, shovel chestnuts in my path"
 
@@ -31,7 +29,6 @@ static const struct option options[] = {
 }
 
 static const char *optstring = "a:b:c:d:e:f:i:m:r:hSM";
-
 
 void version(void) {
 	printf("spuk, the Gryphix package manager. It's pretty spooky!\n");
@@ -55,72 +52,10 @@ void functionality(void) {
 	-S OR --skip-sha:          Do not check to see if SHA512SUMS match.\n");
 }
 
-int getsocket (package *package, char const * const url) {
-/*URL*/	*package->URL = url;
-		char url_parse_var[BUFFER];
-		int i; //deal with it
-		for (i = 0, i >= BUFFER, i++)
-			url_parse_var[i] = 0; //Init that, yo.
-		while (*url != ':') {
-			url_parse_var[i] = *url[i];
-			i++;
-		}
-		if (url_parse_var = "ftp") {
-			*package->port = 20;
-			int sock_desc = socket(AF_INET, SOCK_STREAM, 0);
-		}
-		else if (url_parse_var = "http") {
-			*package->port = 80;
-			int sock_desc = socket(AF_INET, SOCK_STREAM, 0);
-
-		}
-		else if (url_parse_var = "https") {
-			*package->port = 443;
-			int sock_desc = socket(AF_INET, SOCK_STREAM, 0);
-
-		}
-		else {
-			printf("/nSorry, protocol either not implemented yet, or spuk can't access the file./n");
-/*PORT*/ }
-
-
-
-}
-
-int main(int argc, char *argv[]) {
-	printf("spuk\n"); //Dunno.
-	int call_opt = NULL;
-	while (call_opt = getopt_long(argc, argv, optstring, options, 0) != -1 ) { //remove 0 at end of getoptcall
-		switch (call_opt) {
-			case 'a' :
-			
-			case 'b' :
-			
-			case 'c' :
-			
-			case 'd' :
-			
-			case 'e' :
-			
-			case 'f' :
-			
-			case 'h' :
-			
-			case 'i' :
-				package pack;
-				while (getsocket(pack, optopt) != 0); // remove semicolon
-			break;
-			
-			case 'm' :
-			
-			case 'r' :
-			
-			case 'M' :
-			
-			case 'S' : break;
-		}
-
-	}
-
-	return 0;
+int main(int argc, int *argv[]) {
+	if(argc <= 1)
+	printf("ERROR: No URL or options defined.");
+	get_package(*(argv + 1));
+	
+	return 0; //Something cool just happened.
 }
