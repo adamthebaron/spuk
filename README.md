@@ -1,4 +1,4 @@
-spuk
+spuk (No longer working on this.)
 ====
 
 Still a work in progress. It's core functionality is to download and compile a tarball from any URL onto your system, 
